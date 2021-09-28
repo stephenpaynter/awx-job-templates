@@ -3,6 +3,10 @@
   - set_fact:
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
  
+  - name: Creates directory
+    file:
+      path: /var/test
+      state: directory
 
   - name: "NXOS Devices"
     block: 
