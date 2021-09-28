@@ -1,6 +1,6 @@
 ---
 
-    git_branch: /var/lib/rancher/k3s/storage/pvc-c033eb2b-0188-4f48-a308-81c28b43a2e1_default_awx-projects-claim
+    git_branch: /var/lib/
 
 
 
