@@ -6,8 +6,6 @@
    
   - name: 1.0 Git Switch to target branch
     command: dir
-    args:
-      chdir: "{{ git_branch }}"
     changed_when: false
 
   - name: 1.1 Git Synchronize with remote branch
