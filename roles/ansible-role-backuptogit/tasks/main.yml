@@ -37,7 +37,7 @@
   - name: 3.0 Check the directory status
     ansible.builtin.command: git status
     args:
-      chdir: "{{ git_branch }}"
+      chdir: /var/tmp/Home-Lab-Backups
     register: changes
     changed_when: false
     delegate_to: localhost
