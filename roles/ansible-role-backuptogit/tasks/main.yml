@@ -5,11 +5,14 @@
     run_once: true
    
   - name: 1.0 Git Switch to target branch
-    command: git checkout "{{ git_branch }}"
-    args:
-      chdir: "{{ git_branch }}"
+    command: dir
     changed_when: false
     delegate_to: localhost
+    register: _dir
+    
+  - debug:
+      var: _dir
+    
 
   - name: 1.1 Git Synchronize with remote branch
     command: git pull
