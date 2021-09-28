@@ -35,7 +35,7 @@
     when: ansible_network_os == 'asa'
 
   - name: 3.0 Check the directory status
-    command: git status
+    ansible.builtin.command: git status
     args:
       chdir: "{{ git_branch }}"
     register: changes
