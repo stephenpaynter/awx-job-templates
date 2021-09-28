@@ -23,8 +23,9 @@
           backup_options:
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
-    when: ansible_network_os == 'ios'  
-
+    when: ansible_network_os == 'ios'   
+    delegate_to: localhost
+    
   - name: "ASA Devices"
     block:
       - name: "3.0: Backup Cisco ASA devices From Inventory"
@@ -34,6 +35,7 @@
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
     when: ansible_network_os == 'asa'
+     delegate_to: localhost
 
   - name: 3.0 Check the directory status
     ansible.builtin.command: git status
