@@ -50,7 +50,7 @@
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
     when: ansible_network_os == 'asa'
-     delegate_to: localhost
+    delegate_to: localhost
 
   - name: 3.0 Check the directory status
     ansible.builtin.command: git status
