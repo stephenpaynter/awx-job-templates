@@ -4,6 +4,15 @@
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
     run_once: true
 
+  - name: Recursively find /tmp files older than 2 days
+    find:
+      paths: "{{ git_branch }}"
+      file_type: file
+    register: files
+    
+  - debug:
+      var: files
+
   - name: "NXOS Devices"
     block: 
       - name: "1.0: Backup Cisco NXOS devices From Inventory"
