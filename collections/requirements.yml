@@ -2,5 +2,7 @@
 
 collections:
 - cisco.nxos
+- cisco.asa
+- cisco.ios
 
 
