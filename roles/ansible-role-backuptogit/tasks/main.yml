@@ -5,7 +5,7 @@
  
   - name: Creates directory
     file:
-      path: /var/test
+      path: /repositories/test
       state: directory
 
   - name: "NXOS Devices"
