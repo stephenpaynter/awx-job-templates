@@ -3,7 +3,7 @@
   - set_fact:
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
       
-   - name: 1.0 Git Switch to target branch
+  - name: 1.0 Git Switch to target branch
     command: git checkout "{{ git_branch }}"
     args:
       chdir: "{{ git_branch }}"
