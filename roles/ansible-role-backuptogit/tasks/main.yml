@@ -2,6 +2,7 @@
 
   - set_fact:
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
+    run_once: true
 
   - name: "NXOS Devices"
     block: 
