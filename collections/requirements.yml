@@ -1,6 +1,6 @@
 ---
 
 collections:
-- ansible-galaxy collection install cisco.nxos
+- cisco.nxos
 
 
