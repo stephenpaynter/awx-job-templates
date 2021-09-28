@@ -4,7 +4,7 @@
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
       
   - name: 1.0 Git Switch to target branch
-    command: git checkout "{{ git_branch }}"
+    command: git checkout
     args:
       chdir: "{{ git_branch }}"
     changed_when: false
