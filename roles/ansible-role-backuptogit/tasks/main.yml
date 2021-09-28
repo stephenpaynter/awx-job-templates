@@ -8,6 +8,7 @@
     args:
       chdir: "{{ git_branch }}"
     changed_when: false
+    run_once: yes
 
   - name: 1.1 Git Synchronize with remote branch
     command: git pull
