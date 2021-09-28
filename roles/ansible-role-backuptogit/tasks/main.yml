@@ -3,19 +3,7 @@
   - set_fact:
       timestamp: "{{ lookup('pipe', 'date +%Y%m%d') }}"
       
-  - name: 1.0 Git Switch to target branch
-    command: git checkout "{{ git_branch }}"
-    args:
-      chdir: "{{ git_branch }}"
-    changed_when: false
-
-  - name: 1.1 Git Synchronize with remote branch
-    command: git pull
-    args:
-      chdir: "{{ git_branch }}"
-    changed_when: false
-    delegate_to: localhost
-    run_once: yes
+ 
 
   - name: "NXOS Devices"
     block: 
