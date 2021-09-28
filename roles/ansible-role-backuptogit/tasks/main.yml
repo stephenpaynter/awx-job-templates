@@ -5,7 +5,7 @@
     run_once: true
    
   - name: 1.0 Git Switch to target branch
-    command: git checkout "{{ git_branch }}"
+    command: dir
     args:
       chdir: "{{ git_branch }}"
     changed_when: false
