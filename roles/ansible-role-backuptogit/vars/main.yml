@@ -1,6 +1,7 @@
 ---
 
-    git_branch: /repositories/Home-Lab-Backups
+    git_branch: /var/repositories/Home-Lab-Backups
+
 
 
     
