@@ -60,7 +60,7 @@
     shell: |
       git add .
       git commit -m "{{ timestamp }}"
-      git push origin
+      git push
     args:
       chdir: "{{ git_branch }}"
     run_once: yes
