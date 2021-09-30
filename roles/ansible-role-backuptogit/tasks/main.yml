@@ -9,13 +9,13 @@
     args:
       chdir: "{{ git_branch }}"
     changed_when: false
+    run_once: yes
 
   - name: 1.1 Git Synchronize with remote branch
     command: git pull
     args:
       chdir: "{{ git_branch }}"
     changed_when: false
-    delegate_to: localhost
     run_once: yes
     
   - name: "NXOS Devices"
@@ -27,7 +27,6 @@
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
     when: ansible_network_os == 'nxos'
-    delegate_to: localhost
  
   - name: "IOS Devices"
     block:
@@ -38,7 +37,6 @@
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
     when: ansible_network_os == 'ios'   
-    delegate_to: localhost
     
   - name: "ASA Devices"
     block:
@@ -49,7 +47,6 @@
             filename: "{{ inventory_hostname }}.txt"
             dir_path: "{{ git_branch }}"
     when: ansible_network_os == 'asa'
-    delegate_to: localhost
 
   - name: 3.0 Check the directory status
     ansible.builtin.command: git status
@@ -57,7 +54,6 @@
       chdir: /var/tmp/Home-Lab-Backups
     register: changes
     changed_when: false
-    delegate_to: localhost
     run_once: yes
 
   - name: 3.1 Add files to Git staging area, commit and push
@@ -67,5 +63,4 @@
       git push origin
     args:
       chdir: "{{ git_branch }}"
-    delegate_to: localhost
     run_once: yes
